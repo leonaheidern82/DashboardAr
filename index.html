@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Qualidade do Ar</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .dropdown {
+            width: 200px;
+        }
+    </style>
+		
 </head>
 <body>
     <h1>Dashboard de Qualidade do Ar</h1>
 	<h3>Os três gráficos desenvolvidos para o dashboard incluem: a variação de monóxido de carbono (CO) ao longo do dia para municípios selecionados, o índice de qualidade do ar (iqar) por município em Minas Gerais, e a concentração de diferentes poluentes por município, proporcionando uma visão abrangente e interativa sobre a qualidade do ar nas regiões monitoradas.</h3>
-
-    
+	
+	 <!-- Div para mostrar a seleção -->
+    <div id="output1" style="margin-top: 20px;">
+        Selecione um município
+		<!-- Dropdown gerado dinamicamente -->
+		<select id="dropdown1" class="dropdown" onchange="updateOutput()"></select>
+	</div>
+			
     <!-- Incluindo o primeiro gráfico -->
     <h2>Concentração de diferentes poluentes por município</h2>
     <iframe src="grafico_poluentes_por_municipio.html" width="100%" height="600"></iframe>
@@ -21,6 +37,38 @@
 	<!-- Incluindo o terceiro gráfico -->
     <h2>Índice de qualidade do ar (iqar) por município em Minas Gerais</h2>
     <iframe src="grafico_qualidadedoar_por_municipio.html" width="100%" height="600"></iframe>
+	
+	<!-- JavaScript para gerar o dropdown do primeiro gráfico e lidar com a lógica de seleção -->
+    <script>
+        // Lista de municípios (pode ser expandida conforme necessário)
+        const municipios_co = [
+            'Barra Longa', 'Brumadinho', 'Conceição do Mato Dentro', 'Congonhas', 'Coronel Fabriciano', 
+            'Ipatinga', 'Itabira', 'Mariana', 'Ouro Preto', 
+            'Paracatu', 'Pirapora', 'Rio Doce', 'Santa Cruz do Escalvado', 
+            'São José da Lapa', 'Timóteo'
+        ];
+
+        // Função para gerar o dropdown dinamicamente
+        function generateDropdown() {
+            const dropdown1 = document.getElementById("dropdown1");
+            municipios_co.forEach(function(municipio) {
+                const option = document.createElement("option");
+                option.value = municipio;
+                option.text = municipio;
+                dropdown1.appendChild(option);
+            });
+        }
+
+        // Função para atualizar a saída com a seleção do dropdown
+        function updateOutput() {
+            const dropdown1 = document.getElementById("dropdown1");
+            const selectedValue = dropdown1.value;
+            document.getElementById("output1").innerHTML = "Você selecionou: " + selectedValue;
+        }
+
+        // Gerar o dropdown ao carregar a página
+        window.onload = generateDropdown;
+    </script>
     
 </body>
 </html>
