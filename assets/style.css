@@ -52,11 +52,12 @@ select {
     background-color: #ffffff;
 }
 
-/* Estilo para o gráfico 
-.plotly-graph-div {
-    border-top: 1px solid #eeeeee;
-    padding-top: 20px;
-}*/
+.iframe-estilizado {
+  border: 2px solid #6495ed; /* Cor padrão para as bordas */
+  border-radius: 8px;     /* Bordas arredondadas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  margin-top: 20px;       /* Espaço superior */
+}
 
 /* Rodapé ou informações adicionais */
 footer {
