@@ -8,9 +8,18 @@ body {
 
 /* Estilo para o título principal */
 h1 {
-    text-align: center;
-    padding: 20px;
+    text-align: left;
+    padding: 5px;
     color: #333333;
+	background-color: #9fc4c6;
+}
+
+/* Estilo para o título principal */
+h2 {
+    text-align: left;
+    padding: 5px;
+    color: #333333;
+	background-color: #cfe2e2;
 }
 
 /* Estilo para o título principal */
@@ -18,6 +27,11 @@ h3 {
     text-align: center;
     padding: 20px;
     color: #333333;
+	border: 1px solid #cccccc;
+    border-radius: 10px;
+    /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	background-color: #f2f2f2*/
+	
 }
 
 /* Estilo para o parágrafo de descrição */
@@ -56,6 +70,13 @@ select {
   border: 2px solid #6495ed; /* Cor padrão para as bordas */
   border-radius: 8px;     /* Bordas arredondadas */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  margin-top: 20px;       /* Espaço superior */
+}
+
+.estilo_sel {
+  border: 2px solid #6495ed; /* Cor padrão para as bordas */
+  border-radius: 8px;     /* Bordas arredondadas */
+  /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); Sombra para destacar */
   margin-top: 20px;       /* Espaço superior */
 }
 
